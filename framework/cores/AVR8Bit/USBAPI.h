@@ -37,7 +37,7 @@ public:
 	virtual int peek(void);
 	virtual int read(void);
 	virtual void flush(void);
-	virtual size_t write(uint8_t);
+	virtual void write(uint8_t);
 };
 extern Serial_ Serial;
 
@@ -103,7 +103,7 @@ private:
 	void setKeyMap(KeyMap* keyMap);	
 public:
 	Keyboard_();
-	virtual size_t write(uint8_t);
+	virtual void write(uint8_t);
 };
 extern Keyboard_ Keyboard;
 
