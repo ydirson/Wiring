@@ -1,0 +1,20 @@
+##############################################################
+
+# YD - some data taken from Arduino Leonardo
+
+AdafruitAtmega32u4avr109.name=Adafruit Atmega32u4 Breakout board+, with avr109 bootloader
+AdafruitAtmega32u4avr109.upload.protocol=avr109
+# FIXME: check ?
+AdafruitAtmega32u4avr109.upload.maximum_size=28672
+AdafruitAtmega32u4avr109.upload.speed=1200
+AdafruitAtmega32u4avr109.bootloader.low_fuses=0xDE
+AdafruitAtmega32u4avr109.bootloader.high_fuses=0xDA
+AdafruitAtmega32u4avr109.bootloader.extended_fuses=0xCB
+#AdafruitAtmega32u4avr109.bootloader.path=
+#AdafruitAtmega32u4avr109.bootloader.file=DiskLoader-Leonardo.hex
+AdafruitAtmega32u4avr109.bootloader.unlock_bits=0x3F
+AdafruitAtmega32u4avr109.bootloader.lock_bits=0x2F
+AdafruitAtmega32u4avr109.build.mcu=atmega32u4
+AdafruitAtmega32u4avr109.build.f_cpu=16000000L
+AdafruitAtmega32u4avr109.build.core=AVR8Bit
+AdafruitAtmega32u4avr109.build.hardware=Atmega32u4
