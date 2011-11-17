@@ -137,6 +137,10 @@ class HardwareSerial : public Stream
     int peek(void);
     void flush(void);
     void write(uint8_t);
+    // prevent generation of a public default copy constructor
+  private:
+    HardwareSerial(const HardwareSerial&);
+    const HardwareSerial& operator=(const HardwareSerial&);
 };
 
 #if !defined(SINGLEUSART1)
