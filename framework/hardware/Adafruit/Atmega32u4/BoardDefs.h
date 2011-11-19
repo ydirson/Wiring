@@ -19,9 +19,14 @@
 #include "WConstants.h"
 
 #define TOTAL_PINS              30
-#define FIRST_ANALOG_PIN        0
+#define FIRST_ANALOG_PIN        (A0)
 // there is a numbering hole, avoid libs to trip over it
 #define TOTAL_ANALOG_PINS       2
+
+#define LAST_ANALOG_PIN         (A13)
+#define ANALOG_PIN_EXISTS(p)		     \
+  (((p) >= FIRST_ANALOG_PIN && (p) <= A1) || \
+   ((p) >= A4 && (p) <= LAST_ANALOG_PIN))
 
 #define WLED                    (pinE6)
 
