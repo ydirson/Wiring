@@ -30,6 +30,14 @@
 #define INTERNAL2V56 3
 #define INTERNAL     3
 
+// Macros
+
+// BoardDef.h can override this for holes in numbering
+#ifndef ANALOG_PIN_EXISTS
+# define ANALOG_PIN_EXISTS(p) \
+  ((p) >= FIRST_ANALOG_PIN && (p) < (FIRST_ANALOG_PIN+TOTAL_ANALOG_PINS))
+#endif
+
 // Prototypes
 
 int analogRead(uint8_t);
