@@ -43,8 +43,6 @@ void boardInit(void);
  * Pin locations - constants
  *************************************************************/
 
-// FIXME
-
 /* 0 = Vcc */
 const static uint8_t pinE6 = 1;
 const static uint8_t pinB0 = 2;
@@ -104,6 +102,14 @@ const static uint8_t A10 = 10; // pinD7
 const static uint8_t A11 = 11; // pinB4
 const static uint8_t A12 = 12; // pinB5
 const static uint8_t A13 = 13; // pinB6
+
+// External Interrupts
+#define EI0 (pinD0)
+#define EI1 (pinD1)
+#define EI2 (pinD2)
+#define EI3 (pinD3)
+// no EI4 or EI5 on this MCU
+#define EI6 (pinE6)
 
 // Hardware Serial port pins
 #define RX1 (pinD2)
@@ -176,9 +182,12 @@ const static uint8_t A13 = 13; // pinB6
         ( ((PORT) == 3 ) ? &DDRE : \
         ( ((PORT) == 4 ) ? &DDRF : NOT_A_REG)))))
 
-// FIXME
 #define pinToInterrupt(PIN) \
-	(-1)
+	( ((PIN) == pinD0) ? EXTERNAL_INTERRUPT_0 : \
+	( ((PIN) == pinD1) ? EXTERNAL_INTERRUPT_1 : \
+	( ((PIN) == pinD2) ? EXTERNAL_INTERRUPT_2 : \
+	( ((PIN) == pinD3) ? EXTERNAL_INTERRUPT_3 : \
+	( ((PIN) == pinE6) ? EXTERNAL_INTERRUPT_6 : -1)))))
 
 /*************************************************************
  * Timer prescale factors
