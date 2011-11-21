@@ -12,8 +12,6 @@ typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned long u32;
 
-#include "Arduino.h"
-
 #if defined(USBCON)
 	#include "USBDesc.h"
 	#include "USBCore.h"

@@ -145,6 +145,8 @@ class HardwareSerial : public Stream
 
 #if !defined(SINGLEUSART1)
 extern HardwareSerial Serial;
+#elif defined(USBCON)
+# include "USBAPI.h"
 #endif
 #if SERIALPORTS > 1 || defined(SINGLEUSART1)
 extern HardwareSerial Serial1;

@@ -19,6 +19,12 @@
 #include "Platform.h"
 #include "USBAPI.h"
 #include "USBDesc.h"
+extern "C" {
+#include "WDelay.h"
+};
+
+// FIXME: why is that needed !?
+#include "BoardDefs.h"
 
 #if defined(USBCON)
 

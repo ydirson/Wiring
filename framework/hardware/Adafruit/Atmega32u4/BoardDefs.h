@@ -195,5 +195,17 @@ const static uint8_t A13 = 13; // pinB6
 
 #define TIMER0PRESCALEFACTOR 64
 
+/*************************************************************
+ * USBCON support
+ *************************************************************/
+
+// stolen from Leonardo
+#define ARDUINO_MODEL_USB_PID   0x0034
+#define TX_RX_LED_INIT  DDRD |= (1<<5), DDRB |= (1<<0)
+#define TXLED0                  PORTD |= (1<<5)
+#define TXLED1                  PORTD &= ~(1<<5)
+#define RXLED0                  PORTB |= (1<<0)
+#define RXLED1                  PORTB &= ~(1<<0)
+
 #endif
 // BOARDDEFS_H
