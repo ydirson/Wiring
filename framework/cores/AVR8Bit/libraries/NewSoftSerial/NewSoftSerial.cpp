@@ -103,6 +103,15 @@ http://arduiniana.org.
                                 ( (((p) >= 62) && ((p) <= 69)) ? ((p) - 62) : \
                                 0 ) ) ) ) ) )
 
+#elif defined(__AVR_ATmega32U4__)
+#define digitalPinToPCICR(p)    ( (((p) >= 2 && (p) <= 5) || \
+				   ((p) >= 16 && (p) <= 19)) ? (&PCICR) : ((uint8_t *)NULL) )
+#define digitalPinToPCICRbit(p)    (0)
+#define digitalPinToPCMSK(p)    ( (((p) >= 2 && (p) <= 5) || \
+				   ((p) >= 16 && (p) <= 19)) ? (&PCMSK0) : ((uint8_t *)NULL) )
+#define digitalPinToPCMSKbit(p)    ( ((p) >= 2 && (p) <= 5) ? ((p) -2) : \
+				     ((p) - 14) )
+
 #else
 #define digitalPinToPCICR(p)    ((uint8_t *)NULL)
 #define digitalPinToPCICRbit(p) 0
