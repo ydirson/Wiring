@@ -41,11 +41,13 @@ void SerialLCD::begin()
     NewSoftSerial::begin(9600);
     delay(2);
     noPower();
-    delay(1);
-    power();
  //    backlight();
-   delay(1);
-//    NewSoftSerial::print(SLCD_CONTROL_HEADER,BYTE);   
+    while(1)
+    {
+        if (NewSoftSerial::available() > 0 &&NewSoftSerial::read()==UART_READY)
+            break;
+    }
+    power();
     NewSoftSerial::print(SLCD_INIT_ACK,BYTE);
     while(1)
     {
